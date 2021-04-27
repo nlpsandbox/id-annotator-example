@@ -4,7 +4,6 @@ from openapi_server.models.error import Error  # noqa: E501
 from openapi_server.models.text_id_annotation_request import TextIdAnnotationRequest  # noqa: E501
 from openapi_server.models.text_id_annotation import TextIdAnnotation
 from openapi_server.models.text_id_annotation_response import TextIdAnnotationResponse  # noqa: E501
-from openapi_server import util
 
 
 def create_text_id_annotations(text_id_annotation_request=None):  # noqa: E501
@@ -23,12 +22,10 @@ def create_text_id_annotations(text_id_annotation_request=None):  # noqa: E501
             note = annotation_request._note
             print(note)
             annotations = []
-            matches = re.finditer(
-                "[\d]{3}-[\d]{2}-[\d]{4}", note._text)
+            matches = re.finditer(r"[\d]{3}-[\d]{2}-[\d]{4}", note._text)
             add_id_annotation(annotations, matches, "ssn")
 
-            matches = re.finditer(
-                "[\d]{5,}", note._text)
+            matches = re.finditer(r"[\d]{5,}", note._text)
             add_id_annotation(annotations, matches, "id_num")
             res = TextIdAnnotationResponse(annotations)
             status = 200
@@ -36,6 +33,7 @@ def create_text_id_annotations(text_id_annotation_request=None):  # noqa: E501
             status = 500
             res = Error("Internal error", status, str(error))
     return res, status
+
 
 def add_id_annotation(annotations, matches, id_type):
     """

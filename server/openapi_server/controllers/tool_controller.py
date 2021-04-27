@@ -23,6 +23,8 @@ def get_tool():  # noqa: E501
         type="nlpsandbox:date-annotator",
         api_version="1.0.2"
     )
+    return tool, 200
+
 
 def get_tool_dependencies():  # noqa: E501
     """Get tool dependencies
