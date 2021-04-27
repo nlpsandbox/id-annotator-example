@@ -1,10 +1,6 @@
-import connexion
-import six
-
-from openapi_server.models.error import Error  # noqa: E501
 from openapi_server.models.tool import Tool  # noqa: E501
 from openapi_server.models.tool_dependencies import ToolDependencies  # noqa: E501
-from openapi_server import util
+from openapi_server.models.license import License
 
 
 def get_tool():  # noqa: E501
@@ -15,8 +11,18 @@ def get_tool():  # noqa: E501
 
     :rtype: Tool
     """
-    return 'do some magic!'
-
+    tool = Tool(
+        name="date-annotator-example",
+        version="1.0.2",
+        license=License.APACHE_2_0,
+        repository="github:nlpsandbox/date-annotator-example",
+        description="Example implementation of the NLP Sandbox Date Annotator",
+        author="The NLP Sandbox Team",
+        author_email="thomas.schaffter@sagebionetworks.org",
+        url="https://github.com/nlpsandbox/date-annotator-example",
+        type="nlpsandbox:date-annotator",
+        api_version="1.0.2"
+    )
 
 def get_tool_dependencies():  # noqa: E501
     """Get tool dependencies
@@ -26,4 +32,4 @@ def get_tool_dependencies():  # noqa: E501
 
     :rtype: ToolDependencies
     """
-    return 'do some magic!'
+    return ToolDependencies(tool_dependencies=[]), 200
