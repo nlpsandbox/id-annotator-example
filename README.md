@@ -184,7 +184,7 @@ new release of the ID Annotator specification is available:
 
 1. Create a new branch
 
-       git checkout -b upid-to-specification-x.y.z
+       git checkout -b update-to-specification-x.y.z
 
 2. Download the latest OpenAPI specification of the ID Annotator.
 
