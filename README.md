@@ -1,34 +1,34 @@
-# NLP Sandbox Date Annotator Example
+# NLP Sandbox ID Annotator Example
 
-[![GitHub Release](https://img.shields.io/github/release/nlpsandbox/date-annotator-example.svg?include_prereleases&color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/date-annotator-example/releases)
-[![GitHub CI](https://img.shields.io/github/workflow/status/nlpsandbox/date-annotator-example/ci.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/date-annotator-example/actions)
-[![GitHub License](https://img.shields.io/github/license/nlpsandbox/date-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/date-annotator-example/blob/develop/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/nlpsandbox/date-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/nlpsandbox/date-annotator-example)
+[![GitHub Release](https://img.shields.io/github/release/nlpsandbox/id-annotator-example.svg?include_prereleases&color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/id-annotator-example/releases)
+[![GitHub CI](https://img.shields.io/github/workflow/status/nlpsandbox/id-annotator-example/ci.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/id-annotator-example/actions)
+[![GitHub License](https://img.shields.io/github/license/nlpsandbox/id-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/id-annotator-example/blob/develop/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nlpsandbox/id-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/nlpsandbox/id-annotator-example)
 [![Discord](https://img.shields.io/discord/770484164393828373.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=Discord&logo=discord)](https://nlpsandbox.io/discord "Realtime support / chat with the community and the team")
-[![nlpsandbox.io](https://img.shields.io/badge/nlp_sandbox-leaderboard-blue.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAuMiAxNS40VjguNmMxLjktLjUgMy4zLTIuMiAzLjMtNC4yIDAtMi40LTItNC40LTQuNC00LjRzLTQuNCAyLTQuNCA0LjRjMCAuNS4xIDEgLjMgMS41TDguNSA5LjVjLS43LTEuMi0yLjEtMi0zLjYtMi0yLjQgMC00LjQgMi00LjQgNC40czIgNC40IDQuNCA0LjRjMS4zIDAgMi40LS41IDMuMi0xLjRsNi43IDMuOWMtLjEuMi0uMS41LS4xLjggMCAyLjQgMiA0LjQgNC40IDQuNHM0LjQtMiA0LjQtNC40YzAtMi0xLjQtMy43LTMuMy00LjJ6TTQuOSAxNC4yYy0xLjIgMC0yLjItMS0yLjItMi4yczEtMi4yIDIuMi0yLjIgMi4yIDEgMi4yIDIuMi0xIDIuMi0yLjIgMi4yem0xNC4yLTEyYzEuMiAwIDIuMiAxIDIuMiAyLjJzLTEgMi4yLTIuMiAyLjItMi4yLTEtMi4yLTIuMiAxLTIuMiAyLjItMi4yem0tMy40IDE0LjZMOS4yIDEzYy4xLS4zLjEtLjcuMS0xdi0uM2w3LTRjLjUuNCAxLjEuNyAxLjcuOXY2LjhjLS45LjItMS43LjctMi4zIDEuNHptMy40IDVjLTEuMiAwLTIuMi0xLTIuMi0yLjJzMS0yLjIgMi4yLTIuMiAyLjIgMSAyLjIgMi4yLTEgMi4yLTIuMiAyLjJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)](https://nlpsandbox.io/tools/date-annotator/leaderboard "View the performance of this tool on nlpsandbox.io")
+[![nlpsandbox.io](https://img.shields.io/badge/nlp_sandbox-leaderboard-blue.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAuMiAxNS40VjguNmMxLjktLjUgMy4zLTIuMiAzLjMtNC4yIDAtMi40LTItNC40LTQuNC00LjRzLTQuNCAyLTQuNCA0LjRjMCAuNS4xIDEgLjMgMS41TDguNSA5LjVjLS43LTEuMi0yLjEtMi0zLjYtMi0yLjQgMC00LjQgMi00LjQgNC40czIgNC40IDQuNCA0LjRjMS4zIDAgMi40LS41IDMuMi0xLjRsNi43IDMuOWMtLjEuMi0uMS41LS4xLjggMCAyLjQgMiA0LjQgNC40IDQuNHM0LjQtMiA0LjQtNC40YzAtMi0xLjQtMy43LTMuMy00LjJ6TTQuOSAxNC4yYy0xLjIgMC0yLjItMS0yLjItMi4yczEtMi4yIDIuMi0yLjIgMi4yIDEgMi4yIDIuMi0xIDIuMi0yLjIgMi4yem0xNC4yLTEyYzEuMiAwIDIuMiAxIDIuMiAyLjJzLTEgMi4yLTIuMiAyLjItMi4yLTEtMi4yLTIuMiAxLTIuMiAyLjItMi4yem0tMy40IDE0LjZMOS4yIDEzYy4xLS4zLjEtLjcuMS0xdi0uM2w3LTRjLjUuNCAxLjEuNyAxLjcuOXY2LjhjLS45LjItMS43LjctMi4zIDEuNHptMy40IDVjLTEuMiAwLTIuMi0xLTIuMi0yLjJzMS0yLjIgMi4yLTIuMiAyLjIgMSAyLjIgMi4yLTEgMi4yLTIuMiAyLjJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)](https://nlpsandbox.io/tools/id-annotator/leaderboard "View the performance of this tool on nlpsandbox.io")
 
-[date-annotator-leaderboard]: https://www.synapse.org/#!Synapse:syn22277124/wiki/608039
+[id-annotator-leaderboard]: https://www.synapse.org/#!Synapse:syn22277124/wiki/608039
 
-Example implementation of the [NLP Sandbox Date Annotator]
+Example implementation of the [NLP Sandbox ID Annotator]
 
 ## Overview
 
-This repository provides a Python-Flask implementation of the [NLP Sandbox Date
-Annotator]. The Date Annotator is one of the first NLP Tools that can be
-benchmarked on [nlpsandbox.io]. A Date Annotator takes as input a clinical
-note and outputs a list of predicted date annotations found in the clinical
+This repository provides a Python-Flask implementation of the [NLP Sandbox ID
+Annotator]. The ID Annotator is one of the first NLP Tools that can be
+benchmarked on [nlpsandbox.io]. An ID Annotator takes as input a clinical
+note and outputs a list of predicted id annotations found in the clinical
 note.
 
 ### Specification
 
-- Date Annotator API version: 1.0.2
+- ID Annotator API version: 1.0.2
 - Tool version: 1.0.2
-- Docker image: [nlpsandbox/date-annotator-example]
+- Docker image: [nlpsandbox/id-annotator-example]
 
 ## Model
 
 This NLP tool relies on simple regular expressions to identify the location of
-date strings in a clinical note.
+ID strings in a clinical note.
 
 This implementation is provided as an example that Developers can use to quick
 start the development of a new model by creating a repository from this [GitHub
@@ -43,7 +43,7 @@ performance!
 
 ### Running with Docker
 
-The command below starts the Date Annotator locally.
+The command below starts the ID Annotator locally.
 
     docker-compose up --build
 
@@ -51,12 +51,12 @@ You can stop the container run with `Ctrl+C`, followed by `docker-compose down`.
 
 ### Running with Python
 
-We recommend using a Conda environment to install and run the Date Annotator.
+We recommend using a Conda environment to install and run the ID Annotator.
 
-    conda create --name date-annotator python=3.9.1
-    conda activate date-annotator
+    conda create --name id-annotator python=3.9.1
+    conda activate id-annotator
 
-Install and start the Date Annotator.
+Install and start the ID Annotator.
 
     cd server/
     pip install -e .
@@ -64,9 +64,9 @@ Install and start the Date Annotator.
 
 ### Accessing the UI
 
-The Date Annotator provides a web interface that you can use to annotate
+The ID Annotator provides a web interface that you can use to annotate
 clinical notes. The address of this interface depends on whether you run the
-Date Annotator using Docker (production mode) or the Python development
+ID Annotator using Docker (production mode) or the Python development
 server.
 
 - Using Docker: http://localhost/ui
@@ -74,7 +74,7 @@ server.
 
 ## Development
 
-This section describes how you can start developing your own Date Annotator that
+This section describes how you can start developing your own ID Annotator that
 you can then submit for evaluation to the NLP Sandbox.
 
 ### Requirements
@@ -89,11 +89,11 @@ This step will depend on your preferred programming language-framework.
 - If you develop in Python-Flask, create a new repository from this [GitHub
   template].
 - If you develop in Java-Spring, create a new repository from the GitHub
-  template [nlpsandbox/date-annotator-example-java].
+  template [nlpsandbox/id-annotator-example-java].
 
 If you prefer to develop using another language or if you want to learn how this
-repository has been generated, go to the section [Creating a new Date Annotator
-from scratch](#Creating-a-new-Date-Annotator-from-scratch).
+repository has been generated, go to the section [Creating a new ID Annotator
+from scratch](#Creating-a-new-id-Annotator-from-scratch).
 
 ### Configuring the CI/CD workflow
 
@@ -131,15 +131,15 @@ The CI/CD workflow builds and pushes the following tags to the docker registry:
   `x.y.z` is created.
 - The tag `nightly` is created every night everyday at 10am UTC.
 
-### Creating a new Date Annotator from scratch
+### Creating a new ID Annotator from scratch
 
 Follow the steps listed below to generate an initial implementation - also
-called "stub" - of the Date Annotator using one of the many languages and
+called "stub" - of the ID Annotator using one of the many languages and
 framework supported by [OpenAPITools/openapi-generator].
 
-1. Download the latest OpenAPI specification of the [NLP Sandbox Date Annotator].
+1. Download the latest OpenAPI specification of the [NLP Sandbox ID Annotator].
 
-       curl -fO https://nlpsandbox.github.io/nlpsandbox-schemas/date-annotator/latest/openapi.yaml
+       curl -fO https://nlpsandbox.github.io/nlpsandbox-schemas/id-annotator/latest/openapi.yaml
 
 2. Copy the file [package.json] from this repository to your project.
 3. Install the development tools defined in *package.json*
@@ -179,16 +179,16 @@ more accurate predictions. When this happens, the version of the tool
 specifications will be bumped. The latest version of each specification can be
 found in the README of the repository [nlpsandbox/nlpsandbox-schemas].
 
-Here is the protocol that we apply to update this example Date Annotator when a
-new release of the Date Annotator specification is available:
+Here is the protocol that we apply to update this example ID Annotator when a
+new release of the ID Annotator specification is available:
 
 1. Create a new branch
 
        git checkout -b update-to-specification-x.y.z
 
-2. Download the latest OpenAPI specification of the Date Annotator.
+2. Download the latest OpenAPI specification of the ID Annotator.
 
-       curl -fO https://nlpsandbox.github.io/nlpsandbox-schemas/date-annotator/latest/openapi.yaml
+       curl -fO https://nlpsandbox.github.io/nlpsandbox-schemas/id-annotator/latest/openapi.yaml
 
 3. Re-run the OpenAPI generator using the same command that you have used to
    generated the initial server stub.
@@ -221,7 +221,7 @@ turn build the new Docker image for this tool before publishing it to DockerHub.
 
 We recommend to include the following information at the top of your README:
 
-- `Date Annotator API version`: The version of the Date Annotator specification
+- `ID Annotator API version`: The version of the ID Annotator specification
   implemented by the tool.
 - `Tool version`: The version of the tool.
 
@@ -248,12 +248,12 @@ Thinking about contributing to this project? Get started by reading our
 
 [nlpsandbox.io]: https://www.synapse.org/nlpsandbox
 [NLP Sandbox]: https://www.synapse.org/nlpsandbox
-[NLP Sandbox Date Annotator]: https://nlpsandbox.github.io/nlpsandbox-schemas/date-annotator/latest/docs/
-[nlpsandbox/date-annotator-example]: https://hub.docker.com/r/nlpsandbox/date-annotator-example
-[GitHub template]: https://github.com/nlpsandbox/date-annotator-example/generate
+[NLP Sandbox ID Annotator]: https://nlpsandbox.github.io/nlpsandbox-schemas/id-annotator/latest/docs/
+[nlpsandbox/id-annotator-example]: https://hub.docker.com/r/nlpsandbox/id-annotator-example
+[GitHub template]: https://github.com/nlpsandbox/id-annotator-example/generate
 [NLP Sandbox]: nlpsandbox.io
-[nlpsandbox/date-annotator-example-java]: https://github.com/nlpsandbox/date-annotator-example-java
-[Apache License 2.0]: https://github.com/nlpsandbox/date-annotator-example/blob/develop/LICENSE
+[nlpsandbox/id-annotator-example-java]: https://github.com/nlpsandbox/id-annotator-example-java
+[Apache License 2.0]: https://github.com/nlpsandbox/id-annotator-example/blob/develop/LICENSE
 [Patient schema]: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/openapi/commons/components/schemas/Patient.yaml
 [nlpsandbox/nlpsandbox-schemas]: https://github.com/nlpsandbox/nlpsandbox-schemas
 [semantic versioning]: https://semver.org/

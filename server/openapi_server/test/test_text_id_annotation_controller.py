@@ -2,26 +2,25 @@
 
 from __future__ import absolute_import
 import unittest
-
 from flask import json
+from openapi_server.test import BaseTestCase
 
-from openapi_server.test.integration import BaseTestCase
 
+class TestTextIdAnnotationController(BaseTestCase):
+    """TextIdAnnotationController integration test stubs"""
 
-class TestTextDateAnnotationController(BaseTestCase):
-    """TextDateAnnotationController integration test stubs"""
+    def test_create_text_id_annotations(self):
+        """Test case for create_text_id_annotations
 
-    def test_create_text_date_annotations(self):
-        """Test case for create_text_date_annotations
-
-        Annotate dates in a clinical note
+        Annotate IDs in a clinical note
         """
-        text_date_annotation_request = {
+        text_id_annotation_request = {
             "note": {
                 "identifier": "awesome-note",
+                "text": "On 12/26/2020, Ms. Chloe Price met with \
+                Dr. Prescott in Seattle. Her SSN is 123-45-6789.",
                 "type": "loinc:LP29684-5",
-                "patientId": "awesome-patient",
-                "text": "On 12/26/2020, Ms. Chloe Price met with Dr. Prescott."
+                "patientId": "awesome-patient"
             }
         }
         headers = {
@@ -29,10 +28,10 @@ class TestTextDateAnnotationController(BaseTestCase):
             'Content-Type': 'application/json',
         }
         response = self.client.open(
-            '/api/v1/textDateAnnotations',
+            '/api/v1/textIdAnnotations',
             method='POST',
             headers=headers,
-            data=json.dumps(text_date_annotation_request),
+            data=json.dumps(text_id_annotation_request),
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
