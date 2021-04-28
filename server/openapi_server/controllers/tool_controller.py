@@ -12,15 +12,15 @@ def get_tool():  # noqa: E501
     :rtype: Tool
     """
     tool = Tool(
-        name="date-annotator-example",
+        name="id-annotator-example",
         version="1.0.2",
         license=License.APACHE_2_0,
-        repository="github:nlpsandbox/date-annotator-example",
-        description="Example implementation of the NLP Sandbox Date Annotator",
+        repository="github:nlpsandbox/id-annotator-example",
+        description="Example implementation of the NLP Sandbox ID Annotator",
         author="The NLP Sandbox Team",
         author_email="thomas.schaffter@sagebionetworks.org",
-        url="https://github.com/nlpsandbox/date-annotator-example",
-        type="nlpsandbox:date-annotator",
+        url="https://github.com/nlpsandbox/id-annotator-example",
+        type="nlpsandbox:id-annotator",
         api_version="1.0.2"
     )
     return tool, 200
