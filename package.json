@@ -1,7 +1,7 @@
 {
     "name": "id-annotator-example",
     "devDependencies": {
-        "@openapitools/openapi-generator-cli": "2.2.4"
+        "@openapitools/openapi-generator-cli": "2.2.6"
     },
     "private": true,
     "scripts": {
