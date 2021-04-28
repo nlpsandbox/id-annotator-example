@@ -238,7 +238,7 @@ components:
       description: A clinical note
       example:
         identifier: awesome-note
-        text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle.
+        text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle. Her SSN is 123-45-6789.
         type: loinc:LP29684-5
         patientId: awesome-patient
       properties:
@@ -274,7 +274,7 @@ components:
       example:
         note:
           identifier: awesome-note
-          text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle.
+          text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle. Her SSN is 123-45-6789.
           type: loinc:LP29684-5
           patientId: awesome-patient
       properties:

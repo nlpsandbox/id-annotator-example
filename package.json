@@ -1,7 +1,9 @@
 {
+    "name": "id-annotator-example",
     "devDependencies": {
         "@openapitools/openapi-generator-cli": "2.2.4"
     },
+    "private": true,
     "scripts": {
         "generate:server": "openapi-generator-cli generate -g python-flask -o server -i $npm_config_specification",
         "generate:server:latest": "openapi-generator-cli generate -g python-flask -o server -i https://nlpsandbox.github.io/nlpsandbox-schemas/id-annotator/latest/openapi.json",
