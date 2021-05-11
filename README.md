@@ -59,7 +59,7 @@ We recommend using a Conda environment to install and run the ID Annotator.
 Install and start the ID Annotator.
 
     cd server/
-    pip install -e .
+    pip install -r requirements.txt
     python -m openapi_server
 
 ### Accessing the UI
