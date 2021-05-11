@@ -20,7 +20,6 @@ def create_text_id_annotations(text_id_annotation_request=None):  # noqa: E501
         try:
             annotation_request = TextIdAnnotationRequest.from_dict(connexion.request.get_json())  # noqa: E501
             note = annotation_request._note
-            print(note)
             annotations = []
             matches = re.finditer(r"[\d]{3}-[\d]{2}-[\d]{4}", note._text)
             add_id_annotation(annotations, matches, "ssn")

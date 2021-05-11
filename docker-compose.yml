@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   id-annotator:
-    image: nlpsandbox/id-annotator-example:1.0.2
+    image: nlpsandbox/id-annotator-example:1.1.0
     build:
       context: server
       dockerfile: Dockerfile
