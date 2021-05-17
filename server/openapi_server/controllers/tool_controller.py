@@ -13,15 +13,15 @@ def get_tool():  # noqa: E501
     """
     tool = Tool(
         name="id-annotator-example",
-        version="1.1.0",
+        version="1.1.1",
         license=License.APACHE_2_0,
         repository="github:nlpsandbox/id-annotator-example",
         description="Example implementation of the NLP Sandbox ID Annotator",
-        author="The NLP Sandbox Team",
+        author="NLP Sandbox Team",
         author_email="thomas.schaffter@sagebionetworks.org",
         url="https://github.com/nlpsandbox/id-annotator-example",
         type="nlpsandbox:id-annotator",
-        api_version="1.1.0"
+        api_version="1.1.1"
     )
     return tool, 200
 

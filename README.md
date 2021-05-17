@@ -21,8 +21,8 @@ note.
 
 ### Specification
 
-- ID Annotator API version: 1.1.0
-- Tool version: 1.1.0
+- ID Annotator API version: 1.1.1
+- Tool version: 1.1.1
 - Docker image: [nlpsandbox/id-annotator-example]
 
 ## Model
