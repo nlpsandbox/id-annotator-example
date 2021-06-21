@@ -14,3 +14,4 @@ from openapi_server.models.text_id_annotation_request import TextIdAnnotationReq
 from openapi_server.models.text_id_annotation_response import TextIdAnnotationResponse
 from openapi_server.models.tool import Tool
 from openapi_server.models.tool_dependencies import ToolDependencies
+from openapi_server.models.tool_type import ToolType
