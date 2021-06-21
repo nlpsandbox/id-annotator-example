@@ -17,7 +17,8 @@ def get_tool():  # noqa: E501
         version="1.2.0",
         license=License.APACHE_2_0,
         repository="github:nlpsandbox/id-annotator-example",
-        description="Example implementation of the NLP Sandbox ID Annotator",
+        description="Example implementation of the NLP Sandbox ID Annotator " +
+                " API",
         author="NLP Sandbox Team",
         author_email="team@nlpsandbox.io",
         url="https://github.com/nlpsandbox/id-annotator-example",
